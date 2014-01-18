@@ -2,49 +2,101 @@
 <head>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
     <script>
-        function Ctrl($scope) {}
+        function Ctrl($scope) {
+            $scope.stage = "intro";
+        }
     </script>
     <title>Oral surgery exam app</title>
+    <style>
+        .question {
+            font-weight: bold;
+            text-decoration: underline;
+            cursor: pointer;
+            color: #008;
+        }
+
+        .question_stage {
+            border: 1px solid blue;
+            background-color: #eeeeff;
+            padding: 20px;
+        }
+
+        button {
+            font-size: 24px;
+        }
+    </style>
 </head>
 <body ng-controller='Ctrl'>
 <h1>ORAL SURGERY EXAM APP</h1>
-<h2>QUESTION 1. WHAT SHOULD YOU DO IF YOUR PATIENT IS A GHOST?</h2>
+<h2>Patient no.1</h2>
 
-<p>With more people on the planet then ever before, we are headed for a major ghost boom in 20 years.</p>
-<p>As a doctor, the most important factors in your dealing with the undead are civility and access to preoper rituals</p>
+<section ng-show='stage== "intro"'>
+    <p>Anecdote: Mark barnes is visiting the hospital due to a high fever. He has also been waking up very sweaty.</p>
 
-<p>Examiner-question specific responses:</p>
+    <div id='history' class='question_stage'>
+        <h2>History questions</h2>
+        <p ng-click='previous_illnesses = !previous_illnesses' class='question'>Does he have any previous illnesses?</p>
 
-<input ng-model="question" value="a" type="radio" name="question">What is the proper protocol for vengeful ghosts?
-<br><input ng-model="question" value="b" type="radio" name="question">How can you tell if you are dealing with a ghost or a zombie?
+        <p ng-show='previous_illnesses'>Mark has been diagnoised with HIV.</p>
 
+        <p ng-click='lost_weight = !lost_weight' class='question'>Has he lost weight recently?</p>
 
-<p ng-show="question == 'a'">
-    A theatrical resolution to the issues that haunted them in life.
-</p>
+        <p ng-show='lost_weight'>Mark has noticed that he's been losing weight and a fast pace. He also doesn't have very much appetite</p>
 
-<div ng-show="question == 'b'">
-    There are two main divisions of undead, coporeal and non-coporeal.
-    A ghost is the most common form of non-coporeal undead. They do not have physical bodies that you can non-selectively touch.
-    A zombie is the most common form of coporeal undead. They have a consistent body that responds to newtonian physics at all times.
+        <p ng-click='tired = !tired' class='question'>Has he been feeling tired?</p>
 
-    <p>Examiner-question specific responses about ghosts vs. zombies:</p>
-    <input ng-model='questionB' value="1" type="radio" name='questionB'>Can a zombie have a ghost?
-    <br><input ng-model='questionB' value="2" type="radio" name='questionB'>Is a possessed person a zombie or a ghost?
+        <p ng-show='tired'>Mark has noticed that he's been having very low energy.</p>
 
-	<div ng-show="questionB == '1'">
-	    I hope not.
-	</div>
-	<div ng-show="questionB == '2'">
-	    A posessed person is not technically a zombie, official zombie designation requires no presence of intelligent soul apparatuses.
-	</div>
+    </div>
 
+    <br><button ng-click='stage = "physical"'>PHYSICAL</button>
+</section>
 
-</div>
+<section ng-show='stage=="physical"'>
+    <div id='physical' class='question_stage'>
+        <h2>Physical Exams</h2>
+        <p ng-click='head_examined = !head_examined' class='question'>Examine his head & neck.</p>
 
-<p>
-	<button>PREVIOUS QUESTION</button>
-	<button>NEXT QUESTION</button>
-</p>
+        <p ng-show='head_examined'>His lymph nodes are clearly swollen.</p>
+    </div>
+
+    <br><button ng-click='stage = "lab"'>LAB</button>
+</section>
+
+<section ng-show='stage=="lab"'>
+    <div id='lab' class='question_stage'>
+        <h2>LAB</h2>
+        <p ng-click='ln_biopsy = true' class='question'>Lymph Node Biopsy</p>
+        <p>(Risks include infection, bleeding, nerve injury, localized paralysis or numbness)</p>
+
+        <p ng-show='ln_biopsy'>The biopsy reveals the patient is suffering from Hodgkin's lymphona</p>
+    </div>
+
+    <br><button ng-click='stage = "treatment"'>TREATMENT</button>
+</section>
+
+<section ng-show='stage=="treatment"'>
+    <div id='treatment' class='question_stage'>
+        <h2>TREATMENT</h2>
+        <p ng-click='treatment = true' class='question'>Radiation therapy</p>
+        <p>(Risks include nausea, vomiting, mouth/throat/stomach sores)</p>
+
+        <p ng-show='treatment'>After a series of treatments, the lymphona has gone into remission.</p>
+    </div>
+
+    <br><button ng-click='stage = "complications"'>CHECK FOR COMPLICATIONS</button></a>
+</section>
+
+<section ng-show='stage=="complications"'>
+    <div id='treatment' class='question_stage'>
+        <h2>COMPLICATIONS CHECK</h2>
+        <p ng-click='fibrosis_check = !fibrosis_check' class='question'>Fibrosis check</p>
+
+        <p ng-show='fibrosis_check'>The patient is showing no signs of fibrosis after the treatment..</p>
+    </div>
+
+    <br><a href='oralExam.html'><button ng-click='stage = "intro"'>NEXT PATIENT</button></a>
+</section>
+
 </body>
 </html>
