@@ -1,0 +1,50 @@
+<html ng-app>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
+    <script>
+        function Ctrl($scope) {}
+    </script>
+    <title>Oral surgery exam app</title>
+</head>
+<body ng-controller='Ctrl'>
+<h1>ORAL SURGERY EXAM APP</h1>
+<h2>QUESTION 1. WHAT SHOULD YOU DO IF YOUR PATIENT IS A GHOST?</h2>
+
+<p>With more people on the planet then ever before, we are headed for a major ghost boom in 20 years.</p>
+<p>As a doctor, the most important factors in your dealing with the undead are civility and access to preoper rituals</p>
+
+<p>Examiner-question specific responses:</p>
+
+<input ng-model="question" value="a" type="radio" name="question">What is the proper protocol for vengeful ghosts?
+<br><input ng-model="question" value="b" type="radio" name="question">How can you tell if you are dealing with a ghost or a zombie?
+
+
+<p ng-show="question == 'a'">
+    A theatrical resolution to the issues that haunted them in life.
+</p>
+
+<div ng-show="question == 'b'">
+    There are two main divisions of undead, coporeal and non-coporeal.
+    A ghost is the most common form of non-coporeal undead. They do not have physical bodies that you can non-selectively touch.
+    A zombie is the most common form of coporeal undead. They have a consistent body that responds to newtonian physics at all times.
+
+    <p>Examiner-question specific responses about ghosts vs. zombies:</p>
+    <input ng-model='questionB' value="1" type="radio" name='questionB'>Can a zombie have a ghost?
+    <br><input ng-model='questionB' value="2" type="radio" name='questionB'>Is a possessed person a zombie or a ghost?
+
+	<div ng-show="questionB == '1'">
+	    I hope not.
+	</div>
+	<div ng-show="questionB == '2'">
+	    A posessed person is not technically a zombie, official zombie designation requires no presence of intelligent soul apparatuses.
+	</div>
+
+
+</div>
+
+<p>
+	<button>PREVIOUS QUESTION</button>
+	<button>NEXT QUESTION</button>
+</p>
+</body>
+</html>
