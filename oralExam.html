@@ -57,7 +57,10 @@
         <h2>Physical Exams</h2>
         <p ng-click='head_examined = !head_examined' class='question'>Examine his head & neck.</p>
 
-        <p ng-show='head_examined'>His lymph nodes are clearly swollen.</p>
+        <div ng-show='head_examined'>
+            <img src='Lymphadanopathy.JPG' style='height: 400px'>
+            <p>His lymph nodes are clearly swollen.</p>
+        </div>
     </div>
 
     <br><button ng-click='stage = "lab"'>LAB</button>
@@ -69,7 +72,10 @@
         <p ng-click='ln_biopsy = true' class='question'>Lymph Node Biopsy</p>
         <p>(Risks include infection, bleeding, nerve injury, localized paralysis or numbness)</p>
 
-        <p ng-show='ln_biopsy'>The biopsy reveals the patient is suffering from Hodgkin's lymphona</p>
+        <div ng-show='ln_biopsy'>
+            <img src='lymphona.jpg' style='height: 400px'>
+            <p>The biopsy reveals the patient is suffering from Hodgkin's lymphona</p>
+        </div>
     </div>
 
     <br><button ng-click='stage = "treatment"'>TREATMENT</button>
