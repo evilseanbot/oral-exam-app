@@ -1,0 +1,25 @@
+<% provide(:subtitle, 'Physical') %>
+<%= render ('layouts/patient_header') %> 
+<h2> Physical </h2>
+<ul ng-init="actions = [
+    {
+        caption: 'Perform a complete physical exam focusing on the mass.',
+        desc: 'the mass is <b>midline</b>, <b>mobile</b>, <b>tender</b>, and <b>not pulsatile</b>.'
+    }, {
+        caption: 'Perform a full skin exam',
+        desc: 'Nothing unusual found.'
+    }, {
+        caption: 'Perform a bimanual oral exam',
+        desc: 'Nothing unusual found.'
+    }, {
+        caption: 'Papate all lymph node basins',
+        desc: 'Nothing unusual found.'
+    }
+]">
+  <div ng-repeat='action in actions'>
+      <a href=''><li ng-click='action.show = !action.show'>{{action.caption}}</li></a>
+      <p ng-show='action.show' ng-bind-html="action.desc">{{action.desc}}</p>
+  </div>
+</ul>
+<h3>Next step</h3>
+<button>Lab (Not implemented yet)</button>

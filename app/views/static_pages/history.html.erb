@@ -1,21 +1,57 @@
-<%= render 'layouts/header' %>
-
+<% provide(:subtitle, 'History') %>
+<%= render ('layouts/patient_header') %> 
 <h2> History </h2>
-<h3> Anecodte </h3>
+<h3> Anecdote </h3>
 <p> A 56year old male comes to your office when his family physician noted a lump on the side of his neck. </p>
 <h3>Ask for details about</h3>
-<ul>
-<li>Onset?</li>
-<li>Location?</li>
-<li>Growth?</li>
-<li>Pain?</li>
-<li>Fever?</li>
-<li>Chills?</li>
-<li>Recent upper respiratory infection/symptoms?</li>
-<li>Other lesions or previous surgeries?</li>
-<li>History of malignancy?</li>
-<li>History of smoking, chewing tabacco use or alcohol?</li>
-<li>History of radiation?</li>
-<li>Excessive sun exposure</li>
-<li>Family history of cancers, thyroid disorders, sarcoidosis?</li>
+<ul ng-init="questions = [
+    {
+      caption: 'Onset?',
+      desc: 'He first noticed the lump about 2 weeks ago.'
+    }, {
+      caption: 'Location?',
+      desc: 'The lump is placed pretty squarely in the middle of his neck.'
+    }, {
+      caption: 'Growth?',
+      desc: 'He believes that it has grown since the first week he noticed it.'
+    }, {
+      caption: 'Pain?',
+      desc: 'He doesn\'t feel any pain on the lump itself.'
+    }, {
+      caption: 'Fever?',
+      desc: 'He has been running a considerable fever'
+    }, {
+      caption: 'Chills?',
+      desc: 'He has been expieriencing chills off and on.'
+    }, {
+      caption: 'Recent upper respitory infection/symptoms?',
+      desc: 'None that he knows of.'
+    }, {
+      caption: 'Other lesions or previous surgeries?',
+      desc: 'None.'
+    }, {
+      caption: 'History of malignancy?',
+      desc: 'None.'
+    }, {
+      caption: 'History of smoking, chewing tabacco use or alcohol',
+      desc: 'Yes, he is a pack a day smoker and drinks most weekends.'
+    }, {
+      caption: 'History of radiation?',
+      desc: 'None.'
+    }, {
+      caption: 'Excessive sun exposure?',
+      desc: 'He spent a day out in the beach last weekend, but nothing excessive.'
+    }, {
+      caption: 'Family history of cancers, thyroid disorders, sarcodiosis?',
+      desc: 'His mother had lung cancer.'
+    }
+]">
+  <div ng-repeat='question in questions'>
+      <a href=''><li ng-click='question.show = !question.show'>{{question.caption}}</li></a>
+      <p ng-show='question.show'>{{question.desc}}
+  </div>
 </ul>
+
+<h3>Next Step</h3>
+<a href='physical.html'><button>Physical Exams</button></a>
+<br><br><br>

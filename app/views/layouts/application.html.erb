@@ -1,14 +1,19 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>OralExamRails</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+<html ng-app>
+  <head>
+    <title>Oral Exam Rails | <%= yield(:subtitle) %></title>
+      <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+      <%= javascript_include_tag "application", "angular" => true %>
+    <%= csrf_meta_tags %>
+    <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
 
-<%= yield %>
-
-</body>
+  </head>
+  <body>
+     <%= render 'layouts/header' %>
+     <div class='container'>
+       <%= yield %>
+     </div>
+  </body>
 </html>
