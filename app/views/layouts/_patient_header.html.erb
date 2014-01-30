@@ -1,5 +1,23 @@
 <h2 style='text-align: center'>Patient #1.</h2>
-<ul class="nav nav-tabs">
-  <li><a href="history.html">History</a></li>
-  <li><a href="physical.html">Physical</a></li>  
-</ul>
+
+<select ng-controller='Selector' ng-model='url' ng-change='visit_url()'>
+    <option value='history.html' selected='selected'>History</option>
+    <option value='physical.html'>Physical</option>
+    <option value='lab.html'>Lab</option>
+    <option value='scc.html'>--Squamous Cell Carcinoma</option>
+    <option value='bcc.html'>--Basal Cell Carcinoma</option>
+    <option value='melanoma.html'>--Melanoma</option>
+    <option value='cystic.html'>--Cystic</option>
+    <option value='thyroid.html'>--Thyroid</option>
+    <option value='lymphona.html'>--Lymphona</option>
+
+</select>
+
+<script>
+    Selector = function($scope, $window) {
+
+    	$scope.visit_url = function() {
+    		$window.location.href = $scope.url;
+    	}
+    };
+</script>

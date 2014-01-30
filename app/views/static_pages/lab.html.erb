@@ -1,0 +1,22 @@
+<% provide(:subtitle, 'Lab') %>
+<%= render ('layouts/patient_header') %> 
+<h2>Lab</h2>
+<ul ng-init="actions =
+    [{
+        caption: 'Perform FNA',
+        desc: 'There are many possible findings from an FNA, and we\'ll explore several of the possibilties.'
+    }]">
+	<div ng-repeat='action in actions'>
+	      <a href=''><li ng-click='action.show = !action.show'>{{action.caption}}</li></a>
+	      <div ng-show='action.show'>
+	          <p>{{action.desc}}</p>
+	          <p><button>Squamous cell Carcinoma</button>
+	          <p><button>basal Cell Carcinoma</button>
+	          <p><button>Melanoma</button>
+	          <p><button>Cystic</button>
+	          <p><button>Thyroid</button>
+	          <p><button>Lymphona</button>
+	      </div>
+	  </div>    
+
+</ul>

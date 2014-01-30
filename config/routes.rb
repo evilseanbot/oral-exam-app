@@ -2,6 +2,14 @@ OralExamRails::Application.routes.draw do
   get "static_pages/home"
   get "static_pages/history"
   get "static_pages/physical"  
+  get "static_pages/lab"  
+  get "static_pages/scc"  
+  get "static_pages/bcc"  
+  get "static_pages/melanoma"  
+  get "static_pages/cystic"  
+  get "static_pages/thyroid"  
+  get "static_pages/lymphona"  
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

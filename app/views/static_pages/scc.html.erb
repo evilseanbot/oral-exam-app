@@ -1,0 +1,30 @@
+<% provide(:subtitle, 'Squamous Cell Carcinoma') %>
+<%= render ('layouts/patient_header') %> 
+<h2> Squamous Cell Carcinoma </h2>
+
+<ul ng-init="actions = [
+    {
+      caption: 'Obtain Head, Neck and Chest CT',
+      desc: 'Operation completed.'
+    }]">
+  <div ng-repeat='action in actions'>
+      <a href=''><li ng-click='action.show = !action.show'>{{action.caption}}</li></a>
+      <p ng-show='action.show'>{{question.desc}}
+  </div>
+</ul>    
+
+<ul ng-init="actions2 = [
+    {
+      caption: 'Triple Endoscopy: Esophagogastroduodenoscopy, Bronchoscopy, Laryngoscopy',
+      desc: '=unused until sanitize problem fixed='
+    }]">
+  <div ng-repeat='action2 in actions2'>
+      <a href=''><li ng-click='action2.show = !action2.show'>{{action2.caption}}</li></a>
+      <div ng-show='action2.show'> 
+          <p>If mass is primary and &lt;2m, excise with 5mm margins.</p>
+          <p>If mass is primary and &gt;2m, excise with 1cm margins.</p>
+          <p>If mass was a lymph node, find primary, excise primary and Modified Radical Neck Dissection followed by <a href='radiation.html'><button>Radiation</button></a></p>
+          <p>if unknown primary, then Modified Radical Neck Dissection followed by <a href='radiation.html'><button>Radiation</button></a></p>
+      </div>
+  </div>
+</ul>    
