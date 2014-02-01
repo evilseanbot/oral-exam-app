@@ -30,5 +30,14 @@ describe "Static pages" do
     it "should have the content 'Carcinoma'" do
       visit '/static_pages/scc'
       expect(page).to have_content('Carcinoma')
+    end
+  end
+
+  describe 'BCC page' dp
+    it "should have the content 'Carcinoma'" do
+      visit '/static_pages/scc'
+      expect(page).to have_content('Carcinoma')
+    end
+  end
 
 end

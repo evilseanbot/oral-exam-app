@@ -9,6 +9,8 @@ OralExamRails::Application.routes.draw do
   get "static_pages/cystic"  
   get "static_pages/thyroid"  
   get "static_pages/lymphona"  
+  get "static_pages/radiation"  
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

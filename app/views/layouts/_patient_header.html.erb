@@ -1,23 +1,63 @@
 <h2 style='text-align: center'>Patient #1.</h2>
 
-<select ng-controller='Selector' ng-model='url' ng-change='visit_url()'>
-    <option value='history.html' selected='selected'>History</option>
-    <option value='physical.html'>Physical</option>
-    <option value='lab.html'>Lab</option>
-    <option value='scc.html'>--Squamous Cell Carcinoma</option>
-    <option value='bcc.html'>--Basal Cell Carcinoma</option>
-    <option value='melanoma.html'>--Melanoma</option>
-    <option value='cystic.html'>--Cystic</option>
-    <option value='thyroid.html'>--Thyroid</option>
-    <option value='lymphona.html'>--Lymphona</option>
+<div class='dropdown'>
+    <a role='button' id='dLabel' class='btn btn-primary' id='dropdownMenu1' data-toggle='dropdown'>Navigation <span class='caret'></span></a>
+	<ul class='dropdown-menu' role='menu' aria-labelledby="dropdownMenu1" ng-init = "
+	    links = [
+	        {
+	            title: 'History',
+	            loc: 'history.html',
+	            indent: '1'
+	        },
+	        {
+	            title: 'Physical',
+	            loc: 'physical.html',
+	            indent: '1'
 
-</select>
+	        },
+	        {
+	            title: 'Lab',
+	            loc: 'lab.html',
+	            indent: '1'
+	        },
+	        {
+	            title: 'Squamous Cell Carcinoma',
+	            loc: 'scc.html',
+	            indent: '2'
+	        },
+	        {
+	            title: 'Radiation Treatment',
+	            loc: 'radiation.html',
+	            indent: '3'
+	        },	        
+	        {
+	            title: 'Basal Cell Carcinoma',
+	            loc: 'bcc.html',
+	            indent: '2'
+	        },
+	        {
+	            title: 'Melanoma',
+	            loc: 'melanoma.html',
+	            indent: '2'
+	        }, 
+	        {
+	            title: 'Cystic',
+	            loc: 'cystic.html',
+	            indent: '2'
+	        }, 
+	        {
+	            title: 'Thyroid',
+	            loc: 'thyroid.html',
+	            indent: '2'
+	        },
+	        {
+	            title: 'Lymphona',
+	            loc: 'lymphona.html',
+	            indent: '2'
+	        }
 
-<script>
-    Selector = function($scope, $window) {
-
-    	$scope.visit_url = function() {
-    		$window.location.href = $scope.url;
-    	}
-    };
-</script>
+	    ]
+	">
+	    <li role='presentation' ng-repeat='link in links' ng-class='"indent" + link.indent'> <a role ='menuitem' tabindex='2' href='{{link.loc}}'>{{link.title}}</a></li>
+	</ul>
+</div>

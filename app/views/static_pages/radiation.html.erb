@@ -1,0 +1,14 @@
+<% provide(:subtitle, 'Radiation') %>
+<%= render ('layouts/patient_header') %> 
+<h2> Radiation </h2>
+<ul ng-init="actions = [
+    {
+      caption: '5000 cGy Radiation treatment',
+      desc: 'Operate complete. Repeat skin exambination Q3 months.'
+    }
+]">
+  <div ng-repeat='action in actions'>
+      <a href=''><li ng-click='action.show = !action.show'>{{action.caption}}</li></a>
+      <p ng-show='action.show'>{{action.desc}}
+  </div>
+</ul>

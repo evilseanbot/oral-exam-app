@@ -9,7 +9,7 @@
     }]">
   <div ng-repeat='action in actions'>
       <a href=''><li ng-click='action.show = !action.show'>{{action.caption}}</li></a>
-      <p ng-show='action.show'>{{question.desc}}
+      <p ng-show='action.show'>{{action.desc}}
   </div>
 </ul>    
 
@@ -22,7 +22,7 @@
       <a href=''><li ng-click='action2.show = !action2.show'>{{action2.caption}}</li></a>
       <div ng-show='action2.show'> 
           <p>If mass is primary and &lt;2m, excise with 5mm margins.</p>
-          <p>If mass is primary and &gt;2m, excise with 1cm margins.</p>
+          <p>If mass is primary and &gt;2m, excise with 1cm margins, and follow up with <a href='radiation.html'><button>Radiation</button></a></p>
           <p>If mass was a lymph node, find primary, excise primary and Modified Radical Neck Dissection followed by <a href='radiation.html'><button>Radiation</button></a></p>
           <p>if unknown primary, then Modified Radical Neck Dissection followed by <a href='radiation.html'><button>Radiation</button></a></p>
       </div>
