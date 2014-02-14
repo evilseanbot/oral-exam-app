@@ -1,4 +1,5 @@
 OralExamRails::Application.routes.draw do
+  get "scenarios/new"
   get "static_pages/home"
   get "static_pages/history"
   get "static_pages/physical"  
