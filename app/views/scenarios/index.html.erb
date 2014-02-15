@@ -1,0 +1,10 @@
+<% provide(:title, 'Scenarios') %>
+<h1>Scenarios</h1>
+
+<ul class="scenarios">
+  <% @scenarios.each do |scenario| %>
+    <li>
+      <%= link_to "Patient # #{scenario.id} #{scenario.name}", Section.where(scenario_id: scenario.id).order(:order).first() %>
+    </li>
+  <% end %>
+</ul>
