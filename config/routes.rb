@@ -1,9 +1,10 @@
 OralExamRails::Application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
-  get "inquests/new"
   resources :scenarios, :sections
-    
+
+  root 'scenarios#index'
+  match '/admin_page',   to: 'admin/dashboard#index',   via: 'get'  
   get "sections/new"
   get "scenarios/new"
   get "static_pages/home"
