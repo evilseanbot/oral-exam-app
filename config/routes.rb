@@ -3,7 +3,8 @@ OralExamRails::Application.routes.draw do
   ActiveAdmin.routes(self)
   resources :scenarios, :sections
 
-  root 'scenarios#index'
+  root 'static_pages#landing'
+  match '/home',         to: 'scenarios#index',         via: 'get'
   match '/admin_page',   to: 'admin/dashboard#index',   via: 'get'  
   get "sections/new"
   get "scenarios/new"
@@ -18,7 +19,7 @@ OralExamRails::Application.routes.draw do
   get "static_pages/thyroid"  
   get "static_pages/lymphona"  
   get "static_pages/radiation"  
-
+  get "static_pages/landing"
 
 
   # The priority is based upon order of creation: first created -> highest priority.

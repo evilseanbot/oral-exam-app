@@ -1,6 +1,6 @@
 <nav class="navbar navbar-default" role="navigation">
     <div class='navbar-header'>
-        <span class='navbar-brand'><%= link_to "Oral Exam App", root_path %>
+        <span class='navbar-brand'><%= link_to "Oral Exam App", home_path %>
         </span>
 
     </div>
@@ -9,7 +9,20 @@
         </li>
     </ul>
 </nav>
-
-<div id='logo'>
-  <h1>Oral Exam App</h1>
-</div>
+<% if controller_name == 'static_pages' && action_name == 'landing' %>
+	<div id='landing_img'>
+		<div id='landing_blurb'>
+			<h1>Master the General Surgery Certifying Examination</h1>
+			<h2>Practice with online case studies written by surgeons</h2>
+			<div id='start_link'>
+				<ul class="nav nav-pills">
+				    <li class='active'><%= link_to "Use it now", home_path%></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+<% else %>
+	<div id='logo'>
+	    <h1>Oral Exam App</h1>
+	</div>
+<% end %>

@@ -2,7 +2,7 @@
     <a role='button' id='dLabel' class='btn btn-primary' id='dropdownMenu1' data-toggle='dropdown'>Navigation <span class='caret'></span></a>
 	<ul class='dropdown-menu' role='menu' aria-labelledby="dropdownMenu1">
 	    <% @nav_sections.each do |section| %>
-	        <li role='presentation'> <span role ='menuitem' class='indent<%= section.depth %>'><%= link_to section.display_name, section %></span></li>
+	        <li role='presentation'> <span role ='menuitem' class='menu_link indent<%= section.depth %>'><%= link_to section.display_name, section %></span></li>
 	    <% end %>
 	</ul>
 </div>
@@ -12,8 +12,8 @@
 <%= raw @section.desc %>
 
 <% @inquests.each do |inquest| %>
-  <div>
-      <a href=''><li ng-click='inquest<%=inquest.id%>.show = !inquest<%=inquest.id%>.show'><%=inquest.label%></li></a>
+  <div class='inquest_labels'>
+      <a href=''><li class='inquest_label' ng-click='inquest<%=inquest.id%>.show = !inquest<%=inquest.id%>.show'><%=inquest.label%></li></a>
       <div ng-show='inquest<%=inquest.id%>.show'><%= raw inquest.content%>
       </div>
   </div>
