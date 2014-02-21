@@ -2,12 +2,12 @@
     <a role='button' id='dLabel' class='btn btn-primary' id='dropdownMenu1' data-toggle='dropdown'>Navigation <span class='caret'></span></a>
 	<ul class='dropdown-menu' role='menu' aria-labelledby="dropdownMenu1">
 	    <% @nav_sections.each do |section| %>
-	        <li role='presentation'> <span role ='menuitem' class='menu_link indent<%= section.depth %>'><%= link_to section.display_name, section %></span></li>
+	        <li role='presentation'> <span role ='menuitem' class='menu_link indent<%= section.depth %>'><%= link_to section.name, section %></span></li>
 	    <% end %>
 	</ul>
 </div>
 
-<h2><%= @section.display_name %></h2>
+<h2><%= @section.name %></h2>
 
 <%= raw @section.desc %>
 
