@@ -5,6 +5,7 @@ ruby '2.0.0'
 gem 'rails', '4.0.1'
 gem 'bootstrap-sass'
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'active_admin_importable'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
