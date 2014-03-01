@@ -7,14 +7,18 @@
 	display: block;
 }
 
-.indent1 {
-    padding-left: 10px;
+.menu_link {
+	padding-right: 10px;
+	&.indent1 {padding-left: 10px}
+	&.indent2 {padding-left: 30px}
+	&.indent3 {padding-left: 50px}
+	a:link {text-decoration: none}
 }
 
-.indent2 {
-    padding-left: 30px;
+.inquest_label a:link {
+	text-decoration: none;
 }
 
-.indent3 {
-	padding-left: 50px;
+.inquest_content {
+    padding-bottom: 10px;
 }

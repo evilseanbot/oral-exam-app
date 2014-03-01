@@ -12,9 +12,8 @@
 <%= raw @section.desc %>
 
 <% @inquests.each do |inquest| %>
-  <div class='inquest_labels'>
-      <a href=''><li class='inquest_label' ng-click='inquest<%=inquest.id%>.show = !inquest<%=inquest.id%>.show'><%=inquest.label%></li></a>
-      <div ng-show='inquest<%=inquest.id%>.show'><%= raw inquest.content%>
+      <li class='inquest_label' ng-click='inquest<%=inquest.id%>.show = !inquest<%=inquest.id%>.show'><a href=''><%=inquest.label%></a></li>
+      <div class='inquest_content' ng-show='inquest<%=inquest.id%>.show'>
+          <%= raw inquest.content%>
       </div>
-  </div>
 <% end %>
