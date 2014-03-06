@@ -8,5 +8,6 @@ class SectionsController < ApplicationController
     @section = Section.find(params[:id])  	
     @nav_sections = Section.where(scenario_id: @section.scenario_id).order(:order)
     @inquests = Inquest.where(section_id: params[:id]).order(:order)
+    @scenario = Scenario.where(id: @section.scenario_id)[0]
   end
 end
